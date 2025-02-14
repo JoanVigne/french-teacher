@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercice d'écoute</title>
+    <link rel="icon" type="image/png" href="../favicon.png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./header.css" />
+    <link rel="stylesheet" href="./comprehension-orale.css" />
+    <script src="comprehension-orale_content.js" defer></script>
+    <script src="comprehension-orale.js" defer></script>
+    <script src="header.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>Compréhension orale</h1>
+      <nav id="nav-levels">
+        <ul id="levels-list"></ul>
+      </nav>
+
+      <div id="media-container"></div>
+      <h2>Écrivez ce que vous entendez :</h2>
+      <p id="indice-container"></p>
+      <textarea id="reponse" placeholder="Écrivez ici..."></textarea>
+      <button onclick="verifierReponse()">Vérifier</button>
+      <p id="resultat"></p>
+      <p id="numero-exercice">1 sur 1</p>
+      <div class="button-group">
+        <button onclick="exercicePrecedent()">Précédent</button>
+        <button onclick="exerciceSuivant()">Suivant</button>
+      </div>
+      <p id="message-next"></p>
+    </main>
+  </body>
+</html>

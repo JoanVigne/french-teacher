@@ -1,0 +1,53 @@
+#nav-levels {
+  margin-bottom: 20px;
+}
+
+#levels-list {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 3 columns */
+  gap: 10px;
+}
+
+#levels-list li {
+  cursor: pointer;
+  padding: 5px 10px;
+  color: #fff;
+
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  transition: transform 0.2s, border-color 0.2s;
+}
+#levels-list .A1 {
+  background: linear-gradient(45deg, #a5d279, #4be34b);
+}
+
+#levels-list .A2 {
+  background: linear-gradient(45deg, #4169e1, #1e90ff); /* Bleu dégradé */
+}
+
+#levels-list .B1 {
+  background: linear-gradient(45deg, #ffd700, #ffa500); /* Or-Orange dégradé */
+}
+
+#levels-list .B2 {
+  background: linear-gradient(45deg, #ff4500, #ff0000); /* Rouge dégradé */
+}
+
+#levels-list .C1 {
+  background: linear-gradient(
+    45deg,
+    #800080,
+    #4b0082
+  ); /* Violet foncé dégradé */
+}
+
+#levels-list .C2 {
+  background: linear-gradient(45deg, #000000, #1a1a1a); /* Noir dégradé */
+}
+#levels-list li:hover {
+  transform: scale(1.03);
+  transition: transform 0.2s, border-color 0.2s;
+}

@@ -1,0 +1,115 @@
+html {
+  box-sizing: border-box;
+  width: 100%;
+}
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+main {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+h1 {
+  color: #4caf50;
+}
+
+h2 {
+  color: #333;
+  margin: 5px 0;
+}
+.button-group {
+  display: flex;
+}
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 17px;
+  margin: 7px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 150px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+input[type="text"] {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 300px;
+  font-size: 16px;
+}
+textarea {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 300px;
+  min-height: 40px;
+  font-size: 16px;
+}
+audio {
+  margin: 10px 0;
+}
+
+p#resultat,
+p#message-next {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 2px auto;
+  min-height: 20px;
+}
+
+p#numero-exercice {
+  font-size: 18px;
+  margin: 12px 0 0;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+/* Responsive design for mobile devices */
+@media (max-width: 600px) {
+  body {
+    height: auto;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  input[type="text"] {
+    width: 100%;
+  }
+
+  button {
+    padding: 15px;
+    font-size: 18px;
+  }
+
+  audio {
+    width: 100%;
+    margin: 2px 0;
+  }
+}

@@ -1,0 +1,146 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 20px 2px 5px;
+  color: black;
+  height: 60px;
+}
+
+header .logo img {
+  width: 50px;
+  margin-left: 30px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+header nav ul li a {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+header .button {
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 200;
+  background-color: white;
+  color: black;
+  border: 2px #f6922a solid;
+  border-radius: 14px;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+header .button:hover {
+  background-color: #f6922a;
+  transform: scale(1.05);
+}
+
+header .button:active {
+  background-color: #ff6347;
+  transform: scale(0.95);
+}
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  padding: 10px 20px;
+  background-color: #f9f9f9;
+  color: #666;
+}
+footer .logo {
+  display: flex;
+  align-items: baseline;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 350px;
+}
+footer .logo h2 {
+  font-size: 30px;
+  font-weight: 800;
+  color: #f6922a;
+}
+footer .logo p {
+  font-size: 20px;
+  font-weight: 500;
+}
+footer nav {
+  margin: 5px 0 40px;
+}
+footer nav ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0 20px;
+  padding: 20px 0 10px;
+  border-bottom: 1px black solid;
+  min-width: 350px;
+  font-size: 30px;
+}
+footer nav ul li img {
+  opacity: 0;
+  width: 38px;
+}
+footer nav ul li:hover img {
+  opacity: 1;
+}
+footer nav ul li:hover .aContent {
+  font-weight: 600;
+  color: black;
+}
+footer nav ul li a {
+  text-decoration: none;
+  color: rgb(67, 66, 66);
+}
+
+footer nav ul li a .numb {
+  font-size: 25px;
+  margin-right: 35px;
+}
+
+@media (max-width: 780px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  header .logo img {
+    display: none;
+  }
+  header nav ul {
+    flex-direction: column;
+    align-items: center;
+    padding: 35px;
+  }
+
+  header nav ul li {
+    margin-bottom: 10px;
+  }
+  header nav ul li a {
+    font-size: 28px;
+  }
+  header .button {
+    display: none;
+  }
+
+  footer {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    padding: 0;
+  }
+  footer * {
+    text-align: center;
+  }
+  footer .logo {
+    margin-bottom: 10px;
+    align-items: center;
+  }
+}
