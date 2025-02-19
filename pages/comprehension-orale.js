@@ -5,12 +5,18 @@ function afficherNiveaux() {
   const levelsList = document.getElementById("levels-list");
   levelsList.innerHTML = ""; // Clear previous levels
 
-  audios.forEach((level) => {
+  // Sort levels by the desired order
+  const levelOrder = ["A1", "A2", "B1", "B2", "C1", "C2"];
+  const sortedAudios = audios.sort((a, b) => {
+    return levelOrder.indexOf(a.level) - levelOrder.indexOf(b.level);
+  });
+
+  sortedAudios.forEach((level) => {
     const listItem = document.createElement("li");
     listItem.textContent = level.level;
     listItem.classList.add(level.level); // Use the level name as the class name
     listItem.addEventListener("click", () => {
-      currentLevel = audios.indexOf(level);
+      currentLevel = sortedAudios.indexOf(level);
       currentExercice = 0;
       afficherExercice(currentExercice);
     });
@@ -101,14 +107,14 @@ function verifierReponse() {
   }
 }
 
-function exerciceSuivant() {
+/* function exerciceSuivant() {
   const messageNext = document.getElementById("message-next");
-  if (!goodAnswer) {
+   if (!goodAnswer) {
     messageNext.textContent =
       "Vous devez répondre correctement pour passer à l'exercice suivant";
     messageNext.style.color = "red";
     return;
-  }
+  } 
   messageNext.textContent = "";
 
   if (currentExercice < audios[currentLevel].items.length - 1) {
@@ -125,6 +131,6 @@ function exercicePrecedent() {
     currentExercice--;
     afficherExercice(currentExercice);
   }
-}
+} */
 
 document.addEventListener("DOMContentLoaded", afficherNiveaux);

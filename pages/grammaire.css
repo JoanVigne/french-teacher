@@ -6,48 +6,66 @@ main {
   margin: 30px 0;
 }
 .banner ul {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin: 0;
   list-style-type: none;
   padding: 0;
 }
 .banner ul li {
-  background-color: #ffdeac;
-  border-radius: 10px;
+  color: white;
+  border-radius: 5px;
   padding: 10px;
   margin: 5px;
   cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
 }
+.banner ul li.présent {
+  background: var(--bg-A1);
+}
+
+.banner ul li.impérat {
+  background: var(--bg-A2);
+}
+.banner ul li.passéco {
+  background: var(--bg-B1);
+}
+.banner ul li.imparfa {
+  background: var(--bg-B2);
+}
+
+/* .banner ul li.C1 {
+  background: var(--bg-C1);
+}
+
+.banner ul li.C2 {
+  background: var(--bg-C2);
+} */
+.banner ul li:hover {
+  transform: scale(1.03);
+  transition: transform 0.2s, border-color 0.2s;
+}
+
 main a {
   text-decoration: none;
   padding: 5px 7px;
   color: black;
 }
-#verb-container {
-  display: flex;
-  margin: 30px 0;
-  flex-wrap: wrap;
+#title {
+  color: #466c95;
+  max-width: 400px;
+  margin: 20px 0;
 }
-#verb-container ul {
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
-  background-color: #ffdeac;
-  min-width: 150px;
-  border-radius: 10px;
-  margin: 10px;
-  padding: 5px;
+#regles div {
+  margin: 5px auto;
 }
-#phrases-container {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+#exercices {
   background-color: rgb(247, 245, 245);
 }
 .phrase {
   display: flex;
   align-items: center;
-  margin: 5px 0;
+  margin: 10px 0;
   transition: all 0.5s ease;
 }
 .phrase .logo {
@@ -80,4 +98,21 @@ main a {
 .good-answer,
 .good-answer * {
   color: green;
+}
+
+@media (max-width: 768px) {
+  .banner ul {
+    grid-template-columns: 1fr;
+  }
+  #regles div {
+    text-align: center;
+  }
+  .phrase {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  #title {
+    max-width: 100%;
+  }
 }

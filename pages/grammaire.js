@@ -1,62 +1,105 @@
 let levelNavContainer = document.querySelector(".banner");
 
-let contentInGrammaireContent = {
-  etre_et_avoir_au_present,
-  faire_et_aller_au_present,
-};
-createNavBar(contentInGrammaireContent);
+// NOUVELLE FONCTION
+const toutesLesVar = [
+  present_indicatif_etre_avoir,
+  present_indicatif_parler_manger_jouer,
+  present_indicatif_finir_choisir_agir,
+  present_indicatif_prendre_entendre_repondre,
+  present_indicatif_venir_tenir_lire_ecrire,
+  present_indicatif_voir_savoir_pouvoir_devoir,
+  imperatif_etre_avoir_faire_aller,
+  passe_compose_plusieurs_verbes_1,
+  passe_compose_plusieurs_verbes_2,
+  imparfait_etre_avoir,
+  imparfait_finir_choisir_reussir_grandir_maigrir_rougir,
+  imparfait_prendre_voir_faire_savoir_dire_venir,
+];
+// Créer la navigation
+const theTitle = document.getElementById("title");
+createNavBar(toutesLesVar);
 function createNavBar(content) {
   let navBar = document.createElement("nav");
   navBar.classList.add("level-nav");
-
   let ul = document.createElement("ul");
-
-  Object.keys(content).forEach((key) => {
-    let li = document.createElement("li");
-    li.classList.add("nav-item");
-    li.textContent = key.replace(/_/g, " ");
+  content.forEach((item, index) => {
+    const li = document.createElement("li");
+    li.innerText = item.title;
+    const firstLetters = item.title
+      .replace(/\s+/g, "")
+      .slice(0, 7)
+      .toLowerCase();
+    li.className = firstLetters;
     li.addEventListener("click", () => {
-      phrasesContainer.innerHTML = "";
-      generateExercices(content[key]);
-      displayVerbs(key);
+      displayContent(index);
     });
     ul.appendChild(li);
   });
-
   navBar.appendChild(ul);
   levelNavContainer.appendChild(navBar);
 }
 
+// Fonction pour afficher les règles et exercices
+function displayContent(index) {
+  const currentConst = toutesLesVar[index];
+  // Afficher le titre
+  theTitle.innerText = currentConst.title;
+
+  // Afficher les règles
+  const reglesDiv = document.getElementById("regles");
+  reglesDiv.innerHTML = ""; // Réinitialiser le contenu
+  for (const [verbe, conjugaisons] of Object.entries(currentConst.regle)) {
+    const verbeElement = document.createElement("div");
+    verbeElement.innerHTML = `<strong>${verbe}:</strong> ${conjugaisons.join(
+      ", "
+    )}`;
+    reglesDiv.appendChild(verbeElement);
+  }
+  // Afficher les exercices
+  const exercicesDiv = document.getElementById("exercices");
+  exercicesDiv.innerHTML = ""; // Réinitialiser le contenu
+  currentConst.exercices.forEach((exercice, index) => {
+    const exerciceElement = createPhrase(exercice, index);
+    exercicesDiv.appendChild(exerciceElement);
+  });
+  window.scrollTo({
+    top: theTitle.offsetTop,
+    behavior: "smooth",
+  });
+}
+
 let phrasesContainer = document.querySelector("#phrases-container");
-let verbContainer = document.querySelector("#verb-container");
 function createPhrase(thisPhrase, index) {
   let line = document.createElement("div");
   line.classList.add("phrase");
   line.classList.add(index);
-  brutinput = `<input 
+  let brutinput = `<input 
     type="text" 
-    onChange="checkAsnwer(event)" 
+    onChange="checkAnswer(event)" 
     placeholder="..." />  
-    <input type="hidden" value=${thisPhrase.answer} />`;
-  let string = thisPhrase.phrase;
-  let newstr =
-    `<img class="logo" src="../assets/check.png" alt="check" >` +
-    string.replace("_", brutinput);
+    <input type="hidden" value="${thisPhrase.answer}" />`;
+  let [beforeUnderscore, afterUnderscore] = thisPhrase.phrase.split("_");
+  let newstr = `
+    <img class="logo" src="../assets/check.png" alt="check">
+    ${beforeUnderscore}
+    ${brutinput}
+    <div class="remaining-text">${afterUnderscore}</div>
+  `;
+
   line.innerHTML = newstr;
   return line;
 }
-
 function generateExercices(thisChoice) {
   thisChoice.forEach((p, index) => {
     let thisline = createPhrase(p, index);
-
     phrasesContainer.appendChild(thisline);
   });
 }
+function checkAnswer(event) {
+  let reponseUtilisateur = nettoyerTexte(event.target.value);
+  let reponseCorrecte = nettoyerTexte(event.target.nextElementSibling.value);
 
-function checkAsnwer(event) {
-  let answer = event.target.nextElementSibling.value;
-  if (event.target.value == answer) {
+  if (reponseUtilisateur === reponseCorrecte) {
     event.target.parentElement.classList.remove("bad-answer");
     event.target.parentElement.classList.add("good-answer");
   } else {
@@ -64,22 +107,9 @@ function checkAsnwer(event) {
     event.target.parentElement.classList.add("bad-answer");
   }
 }
-function displayVerbs(key) {
-  console.log(key);
-  verbContainer.innerHTML = ""; // Clear previous verbs
-  let verbs;
-  if (key === "etre_et_avoir") {
-    verbs = present_etre_et_avoir;
-  } else if (key === "faire_et_aller") {
-    verbs = present_faire_et_aller;
-  }
-  verbs.forEach((verbGroup) => {
-    let verbList = document.createElement("ul");
-    verbGroup.forEach((verb) => {
-      let verbItem = document.createElement("li");
-      verbItem.textContent = verb;
-      verbList.appendChild(verbItem);
-    });
-    verbContainer.appendChild(verbList);
-  });
+function nettoyerTexte(texte) {
+  return texte
+    .toLowerCase()
+    .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
+    .replace(/\s+/g, "");
 }

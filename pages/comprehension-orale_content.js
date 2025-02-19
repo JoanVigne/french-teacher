@@ -7,16 +7,31 @@ const audios = [
         linkAudio: "../audios/commentvastu.mp3",
         answer: "bonjour, comment vas-tu ?",
       },
+    ],
+  },
+  {
+    level: "A1",
+    items: [
       {
         number: 2,
         linkAudio: "../audios/jevaisbienmerciettoi.mp3",
         answer: "je vais bien, merci, et toi ?",
       },
+    ],
+  },
+  {
+    level: "A1",
+    items: [
       {
         number: 3,
         linkAudio: "../audios/cestunbeausoleil.mp3",
         answer: "c'est un beau soleil.",
       },
+    ],
+  },
+  {
+    level: "A1",
+    items: [
       {
         number: 4,
         linkAudio: "../audios/Lenfantestjeunelhommestvieux.mp3",
@@ -33,16 +48,31 @@ const audios = [
         answer: "quel âge as-tu ?",
         indice: "Attention aux accents.",
       },
+    ],
+  },
+  {
+    level: "A1",
+    items: [
       {
         number: 2,
         linkAudio: "../audios/jaiquinzeans.mp3",
         answer: "j'ai quinze ans.",
       },
+    ],
+  },
+  {
+    level: "A2",
+    items: [
       {
         number: 3,
         linkAudio: "../audios/ilfaitfroiddehors.mp3",
         answer: "il fait froid dehors.",
       },
+    ],
+  },
+  {
+    level: "A2",
+    items: [
       {
         number: 4,
         linkAudio: "../audios/elleaimeleslivres.mp3",
@@ -51,23 +81,38 @@ const audios = [
     ],
   },
   {
-    level: "A1",
+    level: "A2",
     items: [
       {
         number: 1,
         linkAudio: "../audios/quelesttonmetier.mp3",
         answer: "quel est ton métier ?",
       },
+    ],
+  },
+  {
+    level: "A2",
+    items: [
       {
         number: 2,
         linkAudio: "../audios/jesuisingenieur.mp3",
         answer: "je suis ingénieur.",
       },
+    ],
+  },
+  {
+    level: "A1",
+    items: [
       {
         number: 3,
         linkAudio: "../audios/latableestgrande.mp3",
         answer: "la table est grande.",
       },
+    ],
+  },
+  {
+    level: "A2",
+    items: [
       {
         number: 4,
         linkAudio: "../audios/ilsontpartisenvacances.mp3",
@@ -75,8 +120,18 @@ const audios = [
       },
     ],
   },
-
-  // AFTER THAT I NEED TO EDIT
+  {
+    level: "A2",
+    items: [
+      {
+        number: 1,
+        linkAudio: "../audios/jaimemebattre.mp3",
+        answer: "j'aime me battre",
+        indice:
+          "Ignorez les cris, scène du film OSS 117 Le Caire, nid d'espions",
+      },
+    ],
+  },
   {
     level: "B1",
     items: [
@@ -90,33 +145,13 @@ const audios = [
     ],
   },
   {
-    level: "B2",
-    items: [
-      {
-        number: 1,
-        linkAudio: "../audios/queltempsfaitil.mp3",
-        answer: "quel temps fait-il ?",
-      },
-    ],
-  },
-  {
-    level: "C1",
-    items: [
-      {
-        number: 1,
-        linkAudio: "../audios/queltempsfaitil.mp3",
-        answer: "quel temps fait-il ?",
-      },
-    ],
-  },
-  ,
-  {
     level: "C2",
     items: [
       {
         number: 1,
-        linkAudio: "../audios/queltempsfaitil.mp3",
-        answer: "quel temps fait-il ?",
+        linkAudio: "  https://youtu.be/AyKookhlYeA?si=H911KeTYE5rU5wLG",
+        answer: `C'est l'histoire d'un homme qui tombe d'un immeuble de cinquante étages. Le mec, au fur et à mesure de sa chute, il se répète sans cesse pour se rassurer: "Jusqu'ici tout va bien, jusqu'ici tout va bien, jusqu'ici, tout va bien. Mais l'important c'est pas la chute, c'est l'atterrissage.`,
+        indice: `Scène du film La Haine.`,
       },
     ],
   },

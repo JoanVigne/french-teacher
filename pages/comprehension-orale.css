@@ -21,31 +21,27 @@
   transition: transform 0.2s, border-color 0.2s;
 }
 #levels-list .A1 {
-  background: linear-gradient(45deg, #a5d279, #4be34b);
+  background: var(--bg-A1);
 }
 
 #levels-list .A2 {
-  background: linear-gradient(45deg, #4169e1, #1e90ff); /* Bleu dégradé */
+  background: var(--bg-A2);
 }
 
 #levels-list .B1 {
-  background: linear-gradient(45deg, #ffd700, #ffa500); /* Or-Orange dégradé */
+  background: var(--bg-B1);
 }
 
 #levels-list .B2 {
-  background: linear-gradient(45deg, #ff4500, #ff0000); /* Rouge dégradé */
+  background: var(--bg-B2);
 }
 
 #levels-list .C1 {
-  background: linear-gradient(
-    45deg,
-    #800080,
-    #4b0082
-  ); /* Violet foncé dégradé */
+  background: var(--bg-C1);
 }
 
 #levels-list .C2 {
-  background: linear-gradient(45deg, #000000, #1a1a1a); /* Noir dégradé */
+  background: var(--bg-C2);
 }
 #levels-list li:hover {
   transform: scale(1.03);

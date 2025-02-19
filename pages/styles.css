@@ -1,3 +1,11 @@
+:root {
+  --bg-A1: linear-gradient(45deg, #a5d6a7, #66bb6a);
+  --bg-A2: linear-gradient(45deg, #43a947, #58875a);
+  --bg-B1: linear-gradient(45deg, #ffcc80, #ffa726);
+  --bg-B2: linear-gradient(45deg, #ea6f6f, #e53935);
+  --bg-C1: linear-gradient(45deg, #7e57c2, #5e35b1);
+  --bg-C2: linear-gradient(45deg, #000000, #1a1a1a);
+}
 html {
   box-sizing: border-box;
   width: 100%;
@@ -25,7 +33,7 @@ main {
   text-align: center;
 }
 h1 {
-  color: #4caf50;
+  color: black;
 }
 
 h2 {
